@@ -57,7 +57,7 @@ inputs.update({'Gender':{'Male':0,'Female':1},
 #Click for prediction (prediction button)
 
 if st.button("Predict"):
-    model = joblib.load("policybuy_pipeline_model.pkl")
+    model = joblib.load("policybuy_pipeline_model.pkl",mmap_mode='r')
     #input to the fields
     X_input = pd.DataFrame(inputs, index=[0])
     #model prediction
